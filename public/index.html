@@ -71,7 +71,7 @@
             <input type="password" id="signup-password" required />
             <label for="signup-password">Choose password</label>
           </div>
-          <button class="btn orange accent-3 z-depth-0">Sign up</button>
+          <button class="btn teal darken-3 z-depth-0">Sign up</button>
         </form>
       </div>
     </div>
@@ -90,7 +90,7 @@
             <input type="password" id="login-password" required />
             <label for="login-password">Your password</label>
           </div>
-          <button class="btn orange accent-3 z-depth-0">Login</button>
+          <button class="btn teal darken-3 z-depth-0">Login</button>
         </form>
       </div>
     </div>
@@ -122,7 +122,7 @@
             ></textarea>
             <label for="content">Guide Content</label>
           </div>
-          <button class="btn orange accent-3 z-depth-0">Create</button>
+          <button class="btn teal darken-3 z-depth-0">Create</button>
         </form>
       </div>
     </div>
@@ -155,6 +155,33 @@
       </ul>
     </div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyBlEimX6JZcrNClACEzBrpOU-ZuXltDS9c',
+        authDomain: 'guides-creator-auth-oct.firebaseapp.com',
+        databaseURL: 'https://guides-creator-auth-oct.firebaseio.com',
+        projectId: 'guides-creator-auth-oct',
+        storageBucket: 'guides-creator-auth-oct.appspot.com',
+        messagingSenderId: '52724458035',
+        appId: '1:52724458035:web:a26a8fa4b1695e3b55f946',
+        measurementId: 'G-0FQTF7YXWJ'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
     <!-- __________________________________ Compiled and minified JavaScript __________________________________ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="scripts/auth.js"></script>
