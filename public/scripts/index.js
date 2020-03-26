@@ -8,10 +8,17 @@ const accountDetails = document.querySelector('.account-details');
 const setupUI = user => {
   if (user) {
     // Sow account info
-    const html = `
-      <div>Logged in as: ${user.email}</dvi>
-    `;
-    accountDetails.innerHTML = html;
+    db.collection('users')
+      .doc(user.uid)
+      .get()
+      .then(doc => {
+        const html = `
+          <div>Logged in as: ${user.email}</dvi>
+          <div>${doc.data().bio}</div>
+        `;
+        accountDetails.innerHTML = html;
+      });
+
     // toggle UI elements
     loggedInLinks.forEach(item => (item.style.display = 'block'));
     loggedOutLinks.forEach(item => (item.style.display = 'none'));
