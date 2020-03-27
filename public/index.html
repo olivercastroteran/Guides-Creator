@@ -29,7 +29,7 @@
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="logged-in" style="display: none;">
+          <li class="admin" style="display: none;">
             <a
               href="#"
               class="grey-text modal-trigger"
@@ -57,6 +57,15 @@
       </div>
     </nav>
 
+    <!-- __________________________________ ADMIN ACTIONS __________________________________ -->
+    <form
+      class="center-align admin-actions admin"
+      style="margin: 40px auto; max-width: 300px; display:none"
+    >
+      <input type="email" placeholder="User Email" id="admin-email" required />
+      <button class="btn-small teal darken-4 z-depth-0">Make admin</button>
+    </form>
+
     <!-- __________________________________ SIGN UP MODAL __________________________________ -->
     <div id="modal-signup" class="modal">
       <div class="modal-content">
@@ -71,7 +80,12 @@
             <input type="password" id="signup-password" required />
             <label for="signup-password">Choose password</label>
           </div>
+          <div class="input-field">
+            <input type="text" id="signup-bio" required />
+            <label for="signup-bio">One line Bio</label>
+          </div>
           <button class="btn teal darken-3 z-depth-0">Sign up</button>
+          <p class="error pink-text center-align"></p>
         </form>
       </div>
     </div>
@@ -91,6 +105,7 @@
             <label for="login-password">Your password</label>
           </div>
           <button class="btn teal darken-3 z-depth-0">Login</button>
+          <p class="error pink-text center-align"></p>
         </form>
       </div>
     </div>
@@ -159,6 +174,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-functions.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -181,6 +197,7 @@
 
       const auth = firebase.auth();
       const db = firebase.firestore();
+      const functions = firebase.functions();
     </script>
     <!-- __________________________________ Compiled and minified JavaScript __________________________________ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
